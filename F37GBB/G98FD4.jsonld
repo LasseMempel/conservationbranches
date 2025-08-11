@@ -1,0 +1,256 @@
+{
+  "id": "https://www.w3id.org/archlink/branches/F37GBB/G98FD4",
+  "type": "Concept",
+  "prefLabel": {
+    "de": "stabilisierende Konservierung",
+    "en": "conservation"
+  },
+  "altLabel": {
+    "de": [
+      "stabilisierende Maßnahme"
+    ],
+    "en": [
+      "remedial conservation"
+    ]
+  },
+  "definition": {
+    "de": "Sammelbegriff für Methoden des aktive Eingriffs, der direkt an einem Objekt vorgenommen wird, um weiteren Abbau, Zerfall und/oder Schädigung zu verhindern, zu verzögern und/oder zu begrenzen"
+  },
+  "note": {
+    "de": [
+      "DIN EN 15898:2020-02, Erhaltung des kulturellen Erbes - Allgemeine Begriffe; Dreisprachige Fassung EN 15898:2019, Deutsches Institut für Normung.",
+      "ICOM-CC, Terminology to characterize the conservation of tangible cultural heritage, (2008). https://www.icom-cc.org/en/terminology-for-conservation (aufgerufen am 31.10.2024)"
+    ]
+  },
+  "notation": [
+    "G98FD4"
+  ],
+  "narrower": [
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB/C6A532",
+      "prefLabel": {
+        "de": "Entsalzung",
+        "en": "desalination"
+      }
+    },
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB/AF1F5C",
+      "prefLabel": {
+        "de": "Trocknung"
+      }
+    },
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB/DA9CGG",
+      "prefLabel": {
+        "de": "Festigung",
+        "en": "consolidation"
+      }
+    },
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB/F72743",
+      "prefLabel": {
+        "de": "Plasmabehandlung"
+      }
+    },
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB/GF41DG",
+      "prefLabel": {
+        "de": "Schutzüberzug"
+      }
+    }
+  ],
+  "broader": {
+    "id": "https://www.w3id.org/archlink/branches/F37GBB/D32A26",
+    "prefLabel": {
+      "de": "Konservierung"
+    }
+  },
+  "relatedMatch": [
+    {
+      "id": "https://d-nb.info/gnd/4114279-2"
+    },
+    {
+      "id": "https://www.wikidata.org/wiki/Q1479406"
+    },
+    {
+      "id": "https://www.wikidata.org/wiki/Q46993143"
+    }
+  ],
+  "closeMatch": [
+    {
+      "id": "http://vocab.getty.edu/aat/300404519"
+    }
+  ],
+  "inScheme": [
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB"
+    }
+  ],
+  "inSchemeAll": [
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB"
+    }
+  ],
+  "@context": {
+    "@version": 1.1,
+    "id": "@id",
+    "type": "@type",
+    "@vocab": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "schema": "https://schema.org/",
+    "vann": "http://purl.org/vocab/vann/",
+    "ldp": "http://www.w3.org/ns/ldp#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "doc": "http://Restaurierungs-und-Konservierungsdaten.org/doc-vocab#",
+    "title": {
+      "@id": "dct:title",
+      "@container": "@language"
+    },
+    "dc:title": {
+      "@id": "dc:title",
+      "@container": "@language"
+    },
+    "dc:description": {
+      "@id": "dc:description",
+      "@container": "@language"
+    },
+    "description": {
+      "@id": "dct:description",
+      "@container": "@language"
+    },
+    "issued": {
+      "@id": "dct:issued",
+      "@type": "xsd:date"
+    },
+    "created": {
+      "@id": "dct:created",
+      "@type": "xsd:date"
+    },
+    "modified": {
+      "@id": "dct:modified",
+      "@type": "xsd:date"
+    },
+    "creator": "dct:creator",
+    "publisher": "dct:publisher",
+    "preferredNamespacePrefix": "vann:preferredNamespacePrefix",
+    "preferredNamespaceUri": "vann:preferredNamespaceUri",
+    "isBasedOn": "schema:isBasedOn",
+    "source": "dct:source",
+    "prefLabel": {
+      "@container": "@language"
+    },
+    "altLabel": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "hiddenLabel": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "definition": {
+      "@container": "@language"
+    },
+    "note": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "changeNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "editorialNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "historyNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "scopeNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "notation": {
+      "@container": "@set"
+    },
+    "example": {
+      "@container": "@language"
+    },
+    "narrower": {
+      "@container": "@set"
+    },
+    "related": {
+      "@container": "@set"
+    },
+    "relatedMatch": {
+      "@container": "@set"
+    },
+    "narrowerTransitive": {
+      "@container": "@set"
+    },
+    "broaderTransitive": {
+      "@container": "@set"
+    },
+    "broadMatch": {
+      "@container": "@set"
+    },
+    "narrowMatch": {
+      "@container": "@set"
+    },
+    "closeMatch": {
+      "@container": "@set"
+    },
+    "exactMatch": {
+      "@container": "@set"
+    },
+    "hasTopConcept": {
+      "@container": "@set"
+    },
+    "inScheme": {
+      "@container": "@set"
+    },
+    "topConceptOf": {
+      "@container": "@set"
+    },
+    "deprecated": {
+      "@id": "owl:deprecated",
+      "@type": "xsd:boolean"
+    },
+    "isReplacedBy": {
+      "@id": "dct:isReplacedBy",
+      "@container": "@set"
+    },
+    "TextOrUri": {
+      "@id": "doc:TextOrUri",
+      "@container": "@set"
+    },
+    "Verpflichtungsgrad": {
+      "@id": "doc:Verpflichtungsgrad",
+      "@container": "@set"
+    },
+    "Wiederholbar": {
+      "@id": "doc:Wiederholbar",
+      "@container": "@set"
+    },
+    "EmpfohleneVokabulare": {
+      "@id": "doc:EmpfohleneVokabulare",
+      "@container": "@set"
+    }
+  }
+}

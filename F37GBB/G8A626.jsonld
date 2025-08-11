@@ -1,0 +1,240 @@
+{
+  "id": "https://www.w3id.org/archlink/branches/F37GBB/G8A626",
+  "type": "Concept",
+  "prefLabel": {
+    "de": "nasschemische Freilegung"
+  },
+  "definition": {
+    "de": "Freilegung der originalen Objektoberfläche durch Anwendung von Chemikalien"
+  },
+  "note": {
+    "de": [
+      "Janey Cronyn, The Elements of Archaeological Conservation (London 1990), S.65-67."
+    ]
+  },
+  "notation": [
+    "G8A626"
+  ],
+  "broader": {
+    "id": "https://www.w3id.org/archlink/branches/F37GBB/G814D2",
+    "prefLabel": {
+      "de": "Freilegung",
+      "en": "uncovering"
+    }
+  },
+  "related": [
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB/B2642A",
+      "prefLabel": {
+        "de": "Oberflächenbeschichtungen entfernt",
+        "en": "removal of surface coatings"
+      }
+    },
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB/CA59C2",
+      "prefLabel": {
+        "de": "Klebungen entfernt",
+        "en": "removal of adhesives"
+      }
+    },
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB/F57A2A",
+      "prefLabel": {
+        "de": "temporäre Stabilisierung entfernt"
+      }
+    },
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB/FGBB54",
+      "prefLabel": {
+        "de": "Ergänzungsmaterialien entfernt",
+        "en": "removal of filling materials"
+      }
+    }
+  ],
+  "relatedMatch": [
+    {
+      "id": "https://www.w3id.org/archlink/branches/C364G1/A2B746"
+    },
+    {
+      "id": "https://www.w3id.org/archlink/branches/C364G1/FGF575"
+    },
+    {
+      "id": "https://www.w3id.org/archlink/branches/C364G1/B3FCA1"
+    },
+    {
+      "id": "https://www.w3id.org/archlink/branches/C364G1/F87124"
+    }
+  ],
+  "inScheme": [
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB"
+    }
+  ],
+  "inSchemeAll": [
+    {
+      "id": "https://www.w3id.org/archlink/branches/F37GBB"
+    }
+  ],
+  "@context": {
+    "@version": 1.1,
+    "id": "@id",
+    "type": "@type",
+    "@vocab": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "schema": "https://schema.org/",
+    "vann": "http://purl.org/vocab/vann/",
+    "ldp": "http://www.w3.org/ns/ldp#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "doc": "http://Restaurierungs-und-Konservierungsdaten.org/doc-vocab#",
+    "title": {
+      "@id": "dct:title",
+      "@container": "@language"
+    },
+    "dc:title": {
+      "@id": "dc:title",
+      "@container": "@language"
+    },
+    "dc:description": {
+      "@id": "dc:description",
+      "@container": "@language"
+    },
+    "description": {
+      "@id": "dct:description",
+      "@container": "@language"
+    },
+    "issued": {
+      "@id": "dct:issued",
+      "@type": "xsd:date"
+    },
+    "created": {
+      "@id": "dct:created",
+      "@type": "xsd:date"
+    },
+    "modified": {
+      "@id": "dct:modified",
+      "@type": "xsd:date"
+    },
+    "creator": "dct:creator",
+    "publisher": "dct:publisher",
+    "preferredNamespacePrefix": "vann:preferredNamespacePrefix",
+    "preferredNamespaceUri": "vann:preferredNamespaceUri",
+    "isBasedOn": "schema:isBasedOn",
+    "source": "dct:source",
+    "prefLabel": {
+      "@container": "@language"
+    },
+    "altLabel": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "hiddenLabel": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "definition": {
+      "@container": "@language"
+    },
+    "note": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "changeNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "editorialNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "historyNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "scopeNote": {
+      "@container": [
+        "@language",
+        "@set"
+      ]
+    },
+    "notation": {
+      "@container": "@set"
+    },
+    "example": {
+      "@container": "@language"
+    },
+    "narrower": {
+      "@container": "@set"
+    },
+    "related": {
+      "@container": "@set"
+    },
+    "relatedMatch": {
+      "@container": "@set"
+    },
+    "narrowerTransitive": {
+      "@container": "@set"
+    },
+    "broaderTransitive": {
+      "@container": "@set"
+    },
+    "broadMatch": {
+      "@container": "@set"
+    },
+    "narrowMatch": {
+      "@container": "@set"
+    },
+    "closeMatch": {
+      "@container": "@set"
+    },
+    "exactMatch": {
+      "@container": "@set"
+    },
+    "hasTopConcept": {
+      "@container": "@set"
+    },
+    "inScheme": {
+      "@container": "@set"
+    },
+    "topConceptOf": {
+      "@container": "@set"
+    },
+    "deprecated": {
+      "@id": "owl:deprecated",
+      "@type": "xsd:boolean"
+    },
+    "isReplacedBy": {
+      "@id": "dct:isReplacedBy",
+      "@container": "@set"
+    },
+    "TextOrUri": {
+      "@id": "doc:TextOrUri",
+      "@container": "@set"
+    },
+    "Verpflichtungsgrad": {
+      "@id": "doc:Verpflichtungsgrad",
+      "@container": "@set"
+    },
+    "Wiederholbar": {
+      "@id": "doc:Wiederholbar",
+      "@container": "@set"
+    },
+    "EmpfohleneVokabulare": {
+      "@id": "doc:EmpfohleneVokabulare",
+      "@container": "@set"
+    }
+  }
+}
