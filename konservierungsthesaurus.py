@@ -16,12 +16,9 @@ def csv2Df(link, propertyMatchDict):
             df[col] = df[col].map(lambda x: "|".join(x.split("\n")) if isinstance(x, str) else x)
     # delete columns hierarcylevel, type, creator
     df = df.drop(columns=["hierarcylevel", "type", "creator"])
-    # add columns broadMatch and narrowMatch
+    # add column broadMatch
     df["broadMatch"] = ""
-    df["narrowMatch"] = ""
     df["narrower"] = ""
-
-
     return df
 
 def integrateTranslationInLabels(df):
@@ -108,7 +105,7 @@ def createPartitionTables(df, startingPoints):
     print(partitionDf)
 
     # create new df with columns Zweig, URI, description
-    schemeDf = pd.DataFrame(columns=["Name", "URI", "description", "creator", "publisher", "license", "rights", "contributor", "subjects", "hasTopConcept"])
+    schemeDf = pd.DataFrame(columns=["Name", "notation", "URI", "description", "creator", "publisher", "license", "rights", "contributor", "subjects", "hasTopConcept"])
 
     creator = "Kristina Fischer"
     publisher = "Leibniz-Zentrum für Archäologie (LEIZA)"
@@ -153,7 +150,6 @@ def createPartitionTables(df, startingPoints):
         json.dump(narrowerDict, f, ensure_ascii=False, indent=4)
     switchPropertyDict= {
         "broader": "broadMatch",
-        "narrower": "narrowMatch",
         "related": "relatedMatch"
     }
     for index, row in partitionDf.iterrows():
@@ -161,11 +157,12 @@ def createPartitionTables(df, startingPoints):
         prefLabel = row["prefLabel"].split("|")[0].split("@de")[0].strip("[]")
         print(notation, prefLabel)
         schemeURI = f"{branchUri}{notation}"
-        schemeDf = pd.concat([schemeDf, pd.DataFrame({"Name": [prefLabel], "URI": [schemeURI], "description": [f" Zweig für {prefLabel} im Konservierungs- und Restaurierungsfachthesaurus für archäologische Kulturgüter (https://www.w3id.org/archlink/terms/conservationthesaurus)"], "creator": [creator], "publisher": [publisher], "license": [license], "rights": [rights], "contributor": [contributors], "subjects": [subjects], "hasTopConcept": [f"{baseUri}/{notation}"]})], ignore_index=True)
+        schemeDf = pd.concat([schemeDf, pd.DataFrame({"Name": [prefLabel], "notation": [notation], "URI": [schemeURI], "description": [f" Zweig für {prefLabel} im Konservierungs- und Restaurierungsfachthesaurus für archäologische Kulturgüter"], "creator": [creator], "publisher": [publisher], "license": [license], "rights": [rights], "contributor": [contributors], "subjects": [subjects], "hasTopConcept": [f"{baseUri}/{notation}"]})], ignore_index=True)
         branchNotations = recursiveNotationGeneration(df, notation)
         branchDf = df[df["notation"].isin(branchNotations)]
         for branchIndex, branchRow in branchDf.iterrows():
             branchDf.at[branchIndex, "uri"] = f"{baseUri}/{branchRow['notation']}"
+            branchDf["inScheme"] = schemeURI
             if branchRow["notation"] in narrowerDict:
                 branchDf.at[branchIndex, "narrower"] = "|".join(f"{baseUri}/{x}" for x in narrowerDict[branchRow['notation']])
             switchProperties = ["broader", "related"]
@@ -194,6 +191,8 @@ def createPartitionTables(df, startingPoints):
                         branchDf.at[branchIndex, switchPropertyDict[switchProperty]] = existing_value + "|" + "|".join(switchedUris)
                     else:
                         branchDf.at[branchIndex, switchPropertyDict[switchProperty]] = "|".join(switchedUris)
+        # sort columns of branchDf to notation, uri, prefLabel, altLabel, definition, broader, narrower, related, closeMatch, relatedMatch, broadMatch, seeAlso, source, inScheme
+        branchDf = branchDf[["notation", "uri", "prefLabel", "altLabel", "definition", "broader", "narrower", "related", "closeMatch", "relatedMatch", "broadMatch", "seeAlso", "source", "inScheme"]]
         branchDf.to_csv(f"{notation}.csv", index=False)
     schemeDf.to_csv("schemes.csv", index=False)
 
@@ -260,7 +259,7 @@ def df2Skos(ZweigDf, schemeURI, title, topConcept):
     g.add ((thesaurus, DCTERMS.publisher, Literal("Leibniz-Zentrum für Archäologie (LEIZA)")))
     g.add ((thesaurus, DCTERMS.license, URIRef("https://creativecommons.org/licenses/by/4.0/")))
     g.add ((thesaurus, DCTERMS.rights, Literal("CC BY 4.0")))
-    g.add((thesaurus, VANN.preferredNamespaceUri, Literal(thesaurus+"/")))
+    #g.add((thesaurus, VANN.preferredNamespaceUri, Literal(thesaurus+"/")))
 
     contributors = ["Kristina Fella", 
                     "Lasse Mempel-Länger", 
@@ -310,20 +309,17 @@ def df2Skos(ZweigDf, schemeURI, title, topConcept):
     return g
 
 def main():
-    """
     df = csv2Df(link, propertyMatchDict)
     df = integrateTranslationInLabels(df)
     df = useSemanticAatUris(df)
     text = df.to_csv(index=False)
     with open('polishedData.csv', 'w', encoding="utf-8") as f:
         f.write(text)
-    """
     df = pd.read_csv('polishedData.csv', encoding="utf-8")
     createPartitionTables(df, startingPoints)
     schemeDf = pd.read_csv("schemes.csv")
     for index, row in schemeDf.iterrows():
-        schemeURI, title, topConcept = row["URI"], row["Name"], row["hasTopConcept"]
-        notation = schemeURI.split("/")[-1]
+        schemeURI, title, topConcept, notation = row["URI"], row["Name"], row["hasTopConcept"], row["notation"]
         print("Working on: " + title)
         ZweigDf = pd.read_csv(f"{notation}.csv")
         graph = df2Skos(ZweigDf, schemeURI, title, topConcept)
