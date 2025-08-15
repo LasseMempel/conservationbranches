@@ -259,7 +259,7 @@ def df2Skos(ZweigDf, schemeURI, title, topConcept):
     g.add ((thesaurus, DCTERMS.publisher, Literal("Leibniz-Zentrum für Archäologie (LEIZA)")))
     g.add ((thesaurus, DCTERMS.license, URIRef("https://creativecommons.org/licenses/by/4.0/")))
     g.add ((thesaurus, DCTERMS.rights, Literal("CC BY 4.0")))
-    #g.add((thesaurus, VANN.preferredNamespaceUri, Literal(thesaurus+"/")))
+    g.add((thesaurus, VANN.preferredNamespaceUri, Literal(thesaurus+"/")))
 
     contributors = ["Kristina Fella", 
                     "Lasse Mempel-Länger", 
