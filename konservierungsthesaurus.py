@@ -261,7 +261,7 @@ def df2Skos(ZweigDf, schemeURI, title, topConcept):
     g.add ((thesaurus, DCTERMS.rights, Literal("CC BY 4.0")))
     g.add((thesaurus, VANN.preferredNamespaceUri, Literal(thesaurus+"/")))
 
-    contributors = ["Kristina Fella", 
+    contributors = ["Kristina Fischer", 
                     "Lasse Mempel-Länger", 
                     "Waldemar Muskalla", 
                     "Dr. Ingrid Stelzner", 
